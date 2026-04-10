@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&display=swap');
 
-body{
-  font-family: "Playpen Sans", cursive;
+body {
+  font-family: 'Playpen Sans', cursive;
   background-color: #2f2b2b;
   color: #fff;
 }
 
-.App{
+.App {
   text-align: center;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -18,20 +18,20 @@ body{
   gap: 10px;
 }
 
-.add-container{
+.add-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 5px;
 }
-.info-container{
+.info-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 5px;
 }
-input[type="text"],
-button{
+input[type='text'],
+button {
   appearance: none;
   outline: none;
   border: 0;
@@ -39,37 +39,37 @@ button{
   margin: 8px 0px;
   box-sizing: border-box;
   border-radius: 5px;
-  font-family: "playpen Sans",cursive;
+  font-family: 'playpen Sans', cursive;
 }
 
-button{
+button {
   font-weight: 600;
   padding: 10px 15px;
   cursor: pointer;
 }
 
-.add{
+.add {
   background-color: #73addf;
   color: #fff;
   font-weight: 600;
 }
 
-.search-input{
+.search-input {
   width: 200px;
 }
 
-.search-table-container{
+.search-table-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-table{
+table {
   border-collapse: collapse;
 }
 
 table td,
-table th{
+table th {
   border: 1px solid #ddd;
   padding: 8px;
   max-width: 350px;
@@ -78,20 +78,20 @@ table th{
   color: #fff;
 }
 
-table td{
+table td {
   font-size: 18px;
   font-weight: 400;
 }
 
-table tr:hover{
+table tr:hover {
   background-color: #3f3c3c;
 }
 
-tr th{
+tr th {
   min-width: 100px;
 }
 
-table th{
+table th {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -100,34 +100,34 @@ table th{
   font-weight: 600;
 }
 
-.actions{
+.actions {
   display: flex;
   justify-content: center;
   gap: 6px;
 }
-.edit{
+.edit {
   background-color: #73addf;
   color: #fff;
   text-transform: uppercase;
 }
-.delete{
+.delete {
   background-color: lightcoral;
   color: #fff;
   text-transform: uppercase;
 }
 
-@media only screen and (max-width:600px) {
-  tr th{
+@media only screen and (max-width: 600px) {
+  tr th {
     max-width: unset;
   }
-  table td{
+  table td {
     font-size: 14px;
   }
-  .actions{
+  .actions {
     flex-wrap: wrap;
     gap: 2px;
   }
-  button{
+  button {
     margin: 3px 0;
   }
 }

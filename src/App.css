@@ -116,6 +116,15 @@ table th {
   text-transform: uppercase;
 }
 
+.active {
+  background-color: lightgreen;
+}
+
+.pagination{
+  display: flex;
+  gap: 5px;
+  justify-content: end;
+}
 @media only screen and (max-width: 600px) {
   tr th {
     max-width: unset;

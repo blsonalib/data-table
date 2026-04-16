@@ -9,6 +9,10 @@ const DataTable = () => {
   const [data, setData] = useState([]);
   const [editId, setEditId] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5; // number of rows per page
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
   const editRef = useRef(null);
   //    const edit
@@ -18,6 +22,10 @@ const DataTable = () => {
       editRef.current.focus();
     }
   }, [editId]);
+
+  useEffect(()=>{
+	setCurrentPage(1);
+  },[searchTerm])
 
   const handleFormData = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -51,9 +59,12 @@ const DataTable = () => {
     setEditId(null);
   };
 
-  const filterData = data.filter((item) =>
-    item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const filterDataItems = data
+    .filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
+    const filterData = filterDataItems.slice(indexOfFirstItem, indexOfLastItem);
 
   return (
     <>
@@ -146,7 +157,20 @@ const DataTable = () => {
               {/*  */}
             </tbody>
           </table>
-          <div className="pagination"></div>
+          <div className="pagination">
+            {filterDataItems.length > itemsPerPage  && Array.from(
+              { length: Math.ceil(filterDataItems.length / itemsPerPage) },
+              (_, index) => (
+                <button
+                  key={index + 1}
+                  onClick={() => setCurrentPage(index + 1)}
+                  className={currentPage === index + 1 ? 'active' : ''}
+                >
+                  {index + 1}
+                </button>
+              )
+            )}
+          </div>
         </div>
       </div>
     </>
